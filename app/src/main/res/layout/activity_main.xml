@@ -1,18 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ccm.medialearndemo.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp">
 
-</android.support.constraint.ConstraintLayout>
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="240dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+            <!--滑块为空，样式采用新的自定义的样式，初始位置在20，最大位置在100-->
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginEnd="-20dp"
+                android:layout_marginStart="-20dp"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="20"
+                android:progressDrawable="@drawable/seekbar_style2"
+                android:thumb="null" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#101010"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:id="@+id/left_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/pause_btn_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
